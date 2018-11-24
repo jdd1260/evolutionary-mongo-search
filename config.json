@@ -1,0 +1,24 @@
+{
+  "db": {
+    "url": "mongodb://localhost:27017",
+    "name": "evolutionary-mongo-search",
+    "collections": {
+      "trainingQueries": "trainingQueries",
+      "trainingLabels": "trainingLabels",
+      "testingQueries": "testingQueries",
+      "testingLabels": "testingLabels",
+      "documents": "documents"
+    }
+  },
+  "data": {
+    "directory": "data",
+    "training": {
+      "queries": "training-queries.csv",
+      "labels": "training-labels.csv"
+    },
+    "testing": {
+      "queries": "testing-queries.csv",
+      "labels": "testing-labels.csv"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "evolutionary-mongo-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "load-data": "node load-data"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdd1260/evolutionary-mongo-search.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdd1260/evolutionary-mongo-search/issues"
+  },
+  "homepage": "https://github.com/jdd1260/evolutionary-mongo-search#readme",
+  "dependencies": {
+    "csvtojson": "^2.0.8",
+    "mongodb": "^3.1.10"
+  }
+}
