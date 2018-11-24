@@ -1,0 +1,6 @@
+https://en.wikipedia.org/wiki/Hyperparameter_optimization
+https://en.wikipedia.org/wiki/Evolutionary_algorithm
+https://biocaddie.org/biocaddie-2016-dataset-retrieval-challenge
+https://github.com/subprotocol/genetic-js
+https://www.npmjs.com/package/nodeo
+https://github.com/proin/nodeml
