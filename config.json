@@ -19,6 +19,9 @@
     "testing": {
       "queries": "testing-queries.csv",
       "labels": "testing-labels.csv"
+    },
+    "documents": {
+      "directory": "documents"
     }
   }
 }
