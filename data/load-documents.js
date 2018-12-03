@@ -2,8 +2,8 @@ const csvtojson = require("csvtojson");
 const fs = require('fs');
 const _ = require('lodash');
 
-const client = require("./db/client");
-const config = require('./config.json');
+const client = require("../db/client");
+const config = require('../config.json');
 
 const insertChunkSize = 20;
 

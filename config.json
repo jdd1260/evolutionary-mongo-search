@@ -23,5 +23,98 @@
     "documents": {
       "directory": "documents"
     }
+  },
+  "evaluation": {
+    "querySize": 20
+  },
+  "schema": {
+    "METADATA": {
+      "organism": {
+        "name": "text",
+        "gender": "text",
+        "experiment": {
+          "species": "text"
+        },
+        "target": {
+          "species": "text"
+        }
+      },
+      "dataItem": {
+        "source_name": "text",
+        "dataTypes": "text",
+        "description": "text",
+        "title": "text",
+        "experimentType": "text",
+        "keywords": "text"
+      },
+      "anatomicalPart": "text",
+      "dataset": {
+        "note": "text"
+      },
+      "Dataset": {
+        "title": "text",
+        "description": "text"
+      },
+      "cell": {
+        "name": "text"
+      },
+      "treatment": {
+        "title": "text"
+      },
+      "StudyGroup": {
+        "type": "text",
+        "description": "text",
+        "name": "text"
+      },
+      "Disease": {
+        "name": "text"
+      }
+    },
+    "TITLE": "text"
+  },
+  "defaultWeights": {
+    "METADATA": {
+      "organism": {
+        "name": 1,
+        "gender": 1,
+        "experiment": {
+          "species": 1
+        },
+        "target": {
+          "species": 1
+        }
+      },
+      "dataItem": {
+        "source_name": 1,
+        "dataTypes": 1,
+        "description": 1,
+        "title": 1,
+        "experimentType": 1,
+        "keywords": 1
+      },
+      "anatomicalPart": 1,
+      "dataset": {
+        "note": 1
+      },
+      "Dataset": {
+        "title": 1,
+        "description": 1
+      },
+      "cell": {
+        "name": 1
+      },
+      "treatment": {
+        "title": 1
+      },
+      "StudyGroup": {
+        "type": 1,
+        "description": 1,
+        "name": 1
+      },
+      "Disease": {
+        "name": 1
+      }
+    },
+    "TITLE": 1
   }
 }

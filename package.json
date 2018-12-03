@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "load-data": "node load-data.js",
-    "load-docs": "node --expose-gc --max-old-space-size=4000 load-documents.js " 
+    "load-data": "node data/load-data.js",
+    "load-docs": "node --expose-gc --max-old-space-size=4000 data/load-documents.js",
+    "start": "node src/runner.js" 
   },
   "repository": {
     "type": "git",

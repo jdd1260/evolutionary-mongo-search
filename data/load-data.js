@@ -1,7 +1,7 @@
 const csvtojson = require("csvtojson");
 
-const client = require("./db/client");
-const config = require('./config.json');
+const client = require("../db/client");
+const config = require('../config.json');
 
 
 async function loadTraining() {
