@@ -25,7 +25,8 @@
     }
   },
   "evaluation": {
-    "querySize": 20
+    "querySize": 20,
+    "relevanceMin": 1
   },
   "schema": {
     "METADATA": {
