@@ -7,6 +7,6 @@ const indexName = 'text-index';
 module.exports = async function(weights) {
   const schema = getDotNotation(config.schema);
   const documentsCollection = await getCollection();
-  await documentsCollection.dropIndex(indexName);
+  await documentsCollection.indexExists(indexName).then(() => documentsCollection.dropIndex(indexName)).catch((error => null))
   await documentsCollection.createIndex(schema, { weights, name: indexName });
 }

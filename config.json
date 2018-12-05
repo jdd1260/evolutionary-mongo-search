@@ -28,6 +28,11 @@
     "querySize": 20,
     "relevanceMin": 1
   },
+  "training": {
+    "weightChangeLimit": 2.0,
+    "randomWeightMax": 10.0,
+    "completelyRandomLimit": 5.0
+  },
   "schema": {
     "METADATA": {
       "organism": {

@@ -9,7 +9,7 @@ async function run() {
   stopwatch.start();
   try {
     const starterWeights = getDotNotation(config.defaultWeights);
-    const initialRunResult = await runIteration(starterWeights);
+    const initialRunResult = await runIteration({ bestWeights: starterWeights });
     console.log(initialRunResult);
   } catch(error) {
     console.error(error);
