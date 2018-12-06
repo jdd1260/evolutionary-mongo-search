@@ -12,10 +12,7 @@ module.exports.connect = async function() {
     const client = await MongoClient.connect(url, { useNewUrlParser: true });
     connection = client.db(name);
   }
-
   return connection;
-
-
 }
 
 module.exports.disconnect = function() {

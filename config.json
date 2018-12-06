@@ -25,14 +25,18 @@
     }
   },
   "evaluation": {
-    "querySize": 20,
-    "relevanceMin": 1
+    "querySize": 50,
+    "relevanceMin": 1,
+    "fMeasureBeta": 0.5
   },
   "training": {
     "weightChangeLimit": 2.0,
     "randomWeightMax": 10.0,
     "completelyRandomLimit": 5.0,
-    "maxTimeInHours": 6.5
+    "maxTimeInHours": 11.5
+  },
+  "testing": {
+    "shouldPerform": true
   },
   "schema": {
     "METADATA": {

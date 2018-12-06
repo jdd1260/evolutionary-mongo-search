@@ -7,6 +7,7 @@ const evaluate = require('./evaluate');
 const createIndex = require('./create-index');
 
 const maxTrainingTimeInHours = config.training.maxTimeInHours;
+const shouldPerformTesting = config.testing.shouldPerform;
 
 async function testWeights(weights, description) {
   await createIndex(weights)
@@ -14,7 +15,7 @@ async function testWeights(weights, description) {
   return ({ 
     weights,
     description,
-    f1: resultScore
+    fMeasure: resultScore
   });
 }
 
@@ -28,11 +29,14 @@ async function run() {
   stopwatch.start();
   try {
     const starterWeights = getDotNotation(config.defaultWeights);
-    console.log('Starting Initial Testing');
-    const initialTestResult = await testWeights(starterWeights, 'Results from testing with starter weights');
-    console.log('Finished Initial Testing');
 
-    
+    let initialTestResult;
+    if (shouldPerformTesting) {
+      console.log('Starting Initial Testing');
+      initialTestResult = await testWeights(starterWeights, 'Results from testing with starter weights');
+      console.log('Finished Initial Testing');
+    }
+
     let trainResult = { bestWeights: starterWeights };
     let iteration = 1;
     while (msToHours(stopwatch.read()) < maxTrainingTimeInHours) {
@@ -42,12 +46,12 @@ async function run() {
       iteration++;
     }
 
-    console.log('Starting Final Testing');
-    const finalTestResults = await testWeights(trainResult.bestWeights, 'Results from testing after training');
-    console.log('Finished Final Testing');
-
-    console.log({ initialTestResult, finalTestResults });    
-
+    if (shouldPerformTesting) {
+      console.log('Starting Final Testing');
+      const finalTestResults = await testWeights(trainResult.bestWeights, 'Results from testing after training');
+      console.log('Finished Final Testing');
+      console.log({ initialTestResult, finalTestResults });    
+    }
   } catch(error) {
     console.error(error);
   }
