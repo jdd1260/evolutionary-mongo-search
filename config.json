@@ -31,7 +31,8 @@
   "training": {
     "weightChangeLimit": 2.0,
     "randomWeightMax": 10.0,
-    "completelyRandomLimit": 5.0
+    "completelyRandomLimit": 5.0,
+    "maxTimeInHours": 6.5
   },
   "schema": {
     "METADATA": {

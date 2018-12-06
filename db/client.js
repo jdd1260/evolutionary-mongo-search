@@ -2,20 +2,20 @@ const MongoClient = require('mongodb').MongoClient;
 
 const config = require('../config.json');
 
-let client;
+let connection;
 
 module.exports = {};
 
-module.exports.connect = function() {
-  const { auth, url, name } = config.db;
-  if (!client) {
-    client = new MongoClient(url, { auth });
+module.exports.connect = async function() {
+  const { url, name } = config.db;
+  if (!connection) {
+    const client = await MongoClient.connect(url, { useNewUrlParser: true });
+    connection = client.db(name);
   }
 
-  return client.connect().then(() => {
-    const db = client.db(name);
-    return db;
-  });
+  return connection;
+
+
 }
 
 module.exports.disconnect = function() {

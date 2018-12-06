@@ -1,0 +1,103 @@
+P96519:evolutionary-mongo-search joel.detweiler$ npm start
+
+> evolutionary-mongo-search@1.0.0 start /Users/joel.detweiler/Documents/CS410/evolutionary-mongo-search
+> node src/runner.js
+
+Starting at:  2018-12-06T11:58:30.432Z
+Starting Initial Testing
+Finished Initial Testing
+Starting training iteration #1
+Finished training iteration #1
+Starting training iteration #2
+Finished training iteration #2
+Starting training iteration #3
+Finished training iteration #3
+Starting training iteration #4
+Finished training iteration #4
+Starting training iteration #5
+Finished training iteration #5
+Starting training iteration #6
+Finished training iteration #6
+Starting training iteration #7
+Finished training iteration #7
+Starting training iteration #8
+Finished training iteration #8
+Starting training iteration #9
+Finished training iteration #9
+Starting training iteration #10
+Finished training iteration #10
+Starting training iteration #11
+Finished training iteration #11
+Starting training iteration #12
+Finished training iteration #12
+Starting training iteration #13
+Finished training iteration #13
+Starting training iteration #14
+Finished training iteration #14
+Starting training iteration #15
+Finished training iteration #15
+Starting training iteration #16
+Finished training iteration #16
+Starting training iteration #17
+Finished training iteration #17
+Starting training iteration #18
+Finished training iteration #18
+Starting training iteration #19
+Finished training iteration #19
+Starting training iteration #20
+Finished training iteration #20
+Starting training iteration #21
+Finished training iteration #21
+Starting Final Testing
+Finished Final Testing
+{ initialTestResult:
+   { weights:
+      { 'METADATA.organism.name': 1,
+        'METADATA.organism.gender': 1,
+        'METADATA.organism.experiment.species': 1,
+        'METADATA.organism.target.species': 1,
+        'METADATA.dataItem.source_name': 1,
+        'METADATA.dataItem.dataTypes': 1,
+        'METADATA.dataItem.description': 1,
+        'METADATA.dataItem.title': 1,
+        'METADATA.dataItem.experimentType': 1,
+        'METADATA.dataItem.keywords': 1,
+        'METADATA.anatomicalPart': 1,
+        'METADATA.dataset.note': 1,
+        'METADATA.Dataset.title': 1,
+        'METADATA.Dataset.description': 1,
+        'METADATA.cell.name': 1,
+        'METADATA.treatment.title': 1,
+        'METADATA.StudyGroup.type': 1,
+        'METADATA.StudyGroup.description': 1,
+        'METADATA.StudyGroup.name': 1,
+        'METADATA.Disease.name': 1,
+        TITLE: 1 },
+     description: 'Results from testing with starter weights',
+     f1: 0.015390231950163579 },
+  finalTestResults:
+   { weights:
+      { 'METADATA.organism.name': 6,
+        'METADATA.organism.gender': 5,
+        'METADATA.organism.experiment.species': 5,
+        'METADATA.organism.target.species': 5,
+        'METADATA.dataItem.source_name': 5,
+        'METADATA.dataItem.dataTypes': 5,
+        'METADATA.dataItem.description': 9,
+        'METADATA.dataItem.title': 4,
+        'METADATA.dataItem.experimentType': 2,
+        'METADATA.dataItem.keywords': 7,
+        'METADATA.anatomicalPart': 2,
+        'METADATA.dataset.note': 7,
+        'METADATA.Dataset.title': 5,
+        'METADATA.Dataset.description': 1,
+        'METADATA.cell.name': 1,
+        'METADATA.treatment.title': 1,
+        'METADATA.StudyGroup.type': 1,
+        'METADATA.StudyGroup.description': 1,
+        'METADATA.StudyGroup.name': 1,
+        'METADATA.Disease.name': 3,
+        TITLE: 9 },
+     description: 'Results from testing after training',
+     f1: 0.05399983049083315 } }
+Process took 6.63 hours
