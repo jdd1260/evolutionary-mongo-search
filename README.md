@@ -12,16 +12,20 @@ This uses an evolutionary algorithm to try improving on the best known weights. 
 
 The goal is essentially to find a set of weights that performs well, then try a few tweaks to that to see if they perform better. In this way we iteratively improve, and the longer we can run the program the better our results will be. 
 
+Note: the "best" weights are determined using average F-measure across all the training queries. The Beta value used for the F-Measure can be customized.
+
 ## How to Use - Basics
 
 This project uses [NodeJS](https://nodejs.org/en/), [NVM](https://github.com/creationix/nvm), and [MongoDB](https://www.mongodb.com/). You will need to have each of them installed, although the MongoDB instance could be running on a remote server.
 
 1. Fork the project and clone to your local machine. 
 2. Make sure you are on the right Node.js version: `nvm use`. 
-3. Make sure your database is set up correctly (see below)
-4. Make sure your configuration is correct and matches your desires (see below)
-5. Set a time you want it to run for in the `maxTimeInHours` field in `config.json`. This is not a strict limit, but the point at which it stops doing more iterations.
-6. Run: `npm start`.
+3. Configure your database connection (see below)
+4. Define your text search schema and starting weights (see below).
+5. Make sure your training and evaluation configuration is correct and matches your desires (see below).
+6. Set a time you want it to run for in the `maxTimeInHours` field in `config.json`. This is not a strict limit, but the point at which it stops doing more iterations.
+7. Run: `npm start`.
+8. Weight for your `maxTimeInHours`. If testing is being used the program will output your final weights and what their F-Measure was on the testing data as compared to the starting weights.
 
 ## Configuration
 
@@ -40,7 +44,21 @@ Second, specify the collections used for your documents, training labels and que
 
 I had to load my own data into my database, and I wrote tools to help convert from the TREC format that bioCADDIE used. You can replace the CSV files in the `data` directory with your own (just try to match the format) and then run `npm run load-data` to load these CSVs into collections. The file and collection names can all be changed using `config.json`.
 
-### Configure Your Search
+### Configure Your Text Search
+
+You can initialize the project with what you know (or assume) will be important for your text search. You can define the schema of the text index in `config.schema`. This just involves specifying which fields have text that you want to search on.
+
+You can also set the weights that you would like to start the algorithm with. This could be the current weights that you use, a basic weighting of what you think is important, or 1 for every field (the default weighting).
+
+
+### Configure Your Training, Evaluation, and Evolution
+
+All parts of the training and evaluation can be customized in `config.json`, including:
+- the number of documents to return for each query in `evaluation.querySize`
+- the Beta value used for the F-Measure calculation in `evaluation.fMeasureBeta`. Read about this [here](https://en.wikipedia.org/wiki/Precision_and_recall#F-measure).
+- the maximum values used for randomly generating weights in `training`
+- the maximum time you would like the program to run for in `training.maxTimeInHours`. This is not a strict cutoff
+- whether you want testing to be run at the beginning and end on a testing collection in `testing.shouldPerform`.
 
 ## Data Used For My Training and Testing
 
