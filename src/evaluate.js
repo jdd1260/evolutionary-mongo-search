@@ -2,7 +2,9 @@ const _ = require('lodash');
 
 const executeQuery = require('./query');
 const getCollection = require('./get-collection');
-const { fMeasureBeta, relevanceMin } = require('../config.json').evaluation;
+const config = require('../config.json');
+const { fMeasureBeta, relevanceMin } = config.evaluation;
+const { idField } = config.data.documents;
 
 function precision(resultIds, relevantIds) {
   const numRelevant = _.intersection(resultIds, relevantIds).length;
@@ -35,7 +37,7 @@ module.exports = async function(isTraining = true) {
     const { id, query } = queries[index];
     const results = await executeQuery(query);
     const labels = await labelsCollection.find({ "queryId": id }).toArray();
-    const resultIds = results.map(r => r.DOCNO);
+    const resultIds = results.map(r => r[idField]);
     const relevantIds = labels.filter(r => Number(r.relevance) >= relevanceMin).map(r => r.DOCID);
     const fMeasureResult = fMeasure(resultIds, relevantIds);
     fMeasureResults.push(fMeasureResult);

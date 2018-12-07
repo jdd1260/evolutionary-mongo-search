@@ -2,6 +2,7 @@
   "db": {
     "url": "mongodb://localhost:27017",
     "name": "evolutionary-mongo-search",
+    "options": {},
     "collections": {
       "trainingQueries": "trainingQueries",
       "trainingLabels": "trainingLabels",
@@ -21,7 +22,8 @@
       "labels": "testing-labels.csv"
     },
     "documents": {
-      "directory": "documents"
+      "directory": "documents",
+      "idField": "DOCNO"
     }
   },
   "evaluation": {
