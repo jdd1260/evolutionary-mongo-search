@@ -26,19 +26,41 @@ function fMeasure(resultIds, relevantIds) {
   return ((1 + betaSquared) * p * r) / ((betaSquared * p) + r);
 }
 
-module.exports = async function(isTraining = true) {
+
+let trainingData;
+let testingData;
+
+async function getQueriesAndLabels(isTraining = true) {
+  if(isTraining && trainingData) {
+    return trainingData;
+  } else if(!isTraining && testingData) {
+    return testingData;
+  }
+
   const [queriesCollection, labelsCollection] = await Promise.all([
     getCollection(isTraining ? 'trainingQueries' : 'testingQueries'),
     getCollection(isTraining ? 'trainingLabels' : 'testingLabels'),
   ]);
-  const queries = await queriesCollection.find().toArray();
+  const queries = queriesCollection.find().toArray();
+  const labels = labelsCollection.find().toArray();
+  const results = await Promise.all([queries, labels]);
+  if (isTraining) {
+    trainingData = results;
+  } else {
+    testingData = results;
+  }
+  return results;
+}
+
+module.exports = async function(isTraining = true) {
+  const [queries, labels] = await getQueriesAndLabels(isTraining);
   const fMeasureResults = [];
   for (const index in queries) {
     const { id, query } = queries[index];
     const results = await executeQuery(query);
-    const labels = await labelsCollection.find({ "queryId": id }).toArray();
+    const queryLabels = labels.filter(label => label.queryId === id);
     const resultIds = results.map(r => r[idField]);
-    const relevantIds = labels.filter(r => Number(r.relevance) >= relevanceMin).map(r => r.DOCID);
+    const relevantIds = queryLabels.filter(r => Number(r.relevance) >= relevanceMin).map(r => r.DOCID);
     const fMeasureResult = fMeasure(resultIds, relevantIds);
     fMeasureResults.push(fMeasureResult);
   }

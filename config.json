@@ -35,7 +35,7 @@
     "weightChangeLimit": 2.0,
     "randomWeightMax": 10.0,
     "completelyRandomLimit": 5.0,
-    "maxTimeInHours": 11.5
+    "maxTimeInHours": 1
   },
   "testing": {
     "shouldPerform": true

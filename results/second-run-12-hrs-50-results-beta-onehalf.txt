@@ -1,0 +1,142 @@
+^CP96519:evolutionary-mongo-search joel.detweiler$ npm start
+
+> evolutionary-mongo-search@1.0.0 start /Users/joel.detweiler/Documents/CS410/evolutionary-mongo-search
+> node src/runner.js
+
+Starting at:  2018-12-06T23:55:13.975Z
+Starting Initial Testing
+Finished Initial Testing
+Starting training iteration #1
+Finished training iteration #1. New best score is: 0.08932572199691698
+Starting training iteration #2
+Finished training iteration #2. New best score is: 0.09579662841214287
+Starting training iteration #3
+Finished training iteration #3. New best score is: 0.09863109553232428
+Starting training iteration #4
+Finished training iteration #4. New best score is: 0.09863109553232428
+Starting training iteration #5
+Finished training iteration #5. New best score is: 0.0991047541269076
+Starting training iteration #6
+Finished training iteration #6. New best score is: 0.09987779061422979
+Starting training iteration #7
+Finished training iteration #7. New best score is: 0.09987779061422979
+Starting training iteration #8
+Finished training iteration #8. New best score is: 0.1002056057563972
+Starting training iteration #9
+Finished training iteration #9. New best score is: 0.10824656635284896
+Starting training iteration #10
+Finished training iteration #10. New best score is: 0.10824656635284896
+Starting training iteration #11
+Finished training iteration #11. New best score is: 0.10824656635284896
+Starting training iteration #12
+Finished training iteration #12. New best score is: 0.10826224022618687
+Starting training iteration #13
+Finished training iteration #13. New best score is: 0.10826224022618687
+Starting training iteration #14
+Finished training iteration #14. New best score is: 0.10826224022618687
+Starting training iteration #15
+Finished training iteration #15. New best score is: 0.10826224022618687
+Starting training iteration #16
+Finished training iteration #16. New best score is: 0.10826224022618687
+Starting training iteration #17
+Finished training iteration #17. New best score is: 0.10826224022618687
+Starting training iteration #18
+Finished training iteration #18. New best score is: 0.10826224022618687
+Starting training iteration #19
+Finished training iteration #19. New best score is: 0.1145677838217054
+Starting training iteration #20
+Finished training iteration #20. New best score is: 0.11502799656437433
+Starting training iteration #21
+Finished training iteration #21. New best score is: 0.11502799656437433
+Starting training iteration #22
+Finished training iteration #22. New best score is: 0.11864894602379232
+Starting training iteration #23
+Finished training iteration #23. New best score is: 0.12353139792491856
+Starting training iteration #24
+Finished training iteration #24. New best score is: 0.12353139792491856
+Starting training iteration #25
+Finished training iteration #25. New best score is: 0.12353139792491856
+Starting training iteration #26
+Finished training iteration #26. New best score is: 0.12353139792491856
+Starting training iteration #27
+Finished training iteration #27. New best score is: 0.12353139792491856
+Starting training iteration #28
+Finished training iteration #28. New best score is: 0.12353139792491856
+Starting training iteration #29
+Finished training iteration #29. New best score is: 0.12353139792491856
+Starting training iteration #30
+Finished training iteration #30. New best score is: 0.12353139792491856
+Starting training iteration #31
+Finished training iteration #31. New best score is: 0.12353139792491856
+Starting training iteration #32
+Finished training iteration #32. New best score is: 0.12353139792491856
+Starting training iteration #33
+Finished training iteration #33. New best score is: 0.12353139792491856
+Starting training iteration #34
+Finished training iteration #34. New best score is: 0.12353139792491856
+Starting training iteration #35
+Finished training iteration #35. New best score is: 0.12353139792491856
+Starting training iteration #36
+Finished training iteration #36. New best score is: 0.12353139792491856
+Starting training iteration #37
+Finished training iteration #37. New best score is: 0.12353139792491856
+Starting training iteration #38
+Finished training iteration #38. New best score is: 0.12353139792491856
+Starting training iteration #39
+Finished training iteration #39. New best score is: 0.12730203633070597
+Starting training iteration #40
+Finished training iteration #40. New best score is: 0.12730203633070597
+Starting Final Testing
+Finished Final Testing
+{ initialTestResult:
+   { weights:
+      { 'METADATA.organism.name': 1,
+        'METADATA.organism.gender': 1,
+        'METADATA.organism.experiment.species': 1,
+        'METADATA.organism.target.species': 1,
+        'METADATA.dataItem.source_name': 1,
+        'METADATA.dataItem.dataTypes': 1,
+        'METADATA.dataItem.description': 1,
+        'METADATA.dataItem.title': 1,
+        'METADATA.dataItem.experimentType': 1,
+        'METADATA.dataItem.keywords': 1,
+        'METADATA.anatomicalPart': 1,
+        'METADATA.dataset.note': 1,
+        'METADATA.Dataset.title': 1,
+        'METADATA.Dataset.description': 1,
+        'METADATA.cell.name': 1,
+        'METADATA.treatment.title': 1,
+        'METADATA.StudyGroup.type': 1,
+        'METADATA.StudyGroup.description': 1,
+        'METADATA.StudyGroup.name': 1,
+        'METADATA.Disease.name': 1,
+        TITLE: 1 },
+     description: 'Results from testing with starter weights',
+     fMeasure: 0.061047442014206234 },
+  finalTestResults:
+   { weights:
+      { 'METADATA.organism.name': 9,
+        'METADATA.organism.gender': 3,
+        'METADATA.organism.experiment.species': 2,
+        'METADATA.organism.target.species': 11,
+        'METADATA.dataItem.source_name': 8,
+        'METADATA.dataItem.dataTypes': 10,
+        'METADATA.dataItem.description': 7,
+        'METADATA.dataItem.title': 7,
+        'METADATA.dataItem.experimentType': 2,
+        'METADATA.dataItem.keywords': 4,
+        'METADATA.anatomicalPart': 2,
+        'METADATA.dataset.note': 12,
+        'METADATA.Dataset.title': 8,
+        'METADATA.Dataset.description': 3,
+        'METADATA.cell.name': 7,
+        'METADATA.treatment.title': 9,
+        'METADATA.StudyGroup.type': 10,
+        'METADATA.StudyGroup.description': 1,
+        'METADATA.StudyGroup.name': 1,
+        'METADATA.Disease.name': 12,
+        TITLE: 3 },
+     description: 'Results from testing after training',
+     fMeasure: 0.1286927767631028 } }
+Process took 11.75 hours
+P96519:evolutionary-mongo-search joel.detweiler$
