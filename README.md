@@ -63,3 +63,14 @@ All parts of the training and evaluation can be customized in `config.json`, inc
 ## Data Used For My Training and Testing
 
 Data used for training and testing is from the [BIOCADDIE 2016 DATASET RETRIEVAL CHALLENGE](https://biocaddie.org/biocaddie-2016-dataset-retrieval-challenge). This data is in its raw, unchanged form in the `raw-data` directory. Data has been lightly processed from the `raw-data` directory to the `data` directory, where it is represented entirely in CSV format. You can download the document set from the bioCADDIE website and store them locally directory called "documents". Since it is about 4.5 GB of documents, loading them into a MongoDB instance can be difficult. I wrote a script to do this for you. You can run it by running `npm run load-docs` from the root directory. This will take a very long time to run.
+
+## bioCADDIE Results
+
+I tried multiple runs of this program on the 2016 bioCADDIE data set, varying the time, query size, and F-Measure each time. My result outputs can be found in the `results` directory. You can see that I always got the F-Measure to at least double after training. Here is a summary of the trials:
+
+| Starting F-Measure | End F-Measure | Configuration                                 |
+|--------------------|---------------|-----------------------------------------------|
+| 0.015              | 0.054         | F1, 20 Search Results, 7 Hours of Training    |
+| 0.061              | 0.129         | F0.5, 50 Search Results, 12 Hours of Training |
+|                    |               |                                               |
+
