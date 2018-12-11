@@ -27,6 +27,8 @@ This project uses [NodeJS](https://nodejs.org/en/), [NVM](https://github.com/cre
 7. Run: `npm start`.
 8. Weight for your `maxTimeInHours`. If testing is being used the program will output your final weights and what their F-Measure was on the testing data as compared to the starting weights.
 
+Note: your computer will likely need to have settings changed so that it does not go to sleep while this is running. If you are on a mac, the `caffeinate` command line tool is a great help.
+
 ## Configuration
 
 You can change the configuration of this program without touching any JavaScript code - just update the values in `config.json`. There are many options there for you to adjust to your needs and desires. You can likely configure this tool to run with your data without making any changes outside the `config.json` file. 
@@ -72,5 +74,5 @@ I tried multiple runs of this program on the 2016 bioCADDIE data set, varying th
 |--------------------|---------------|-----------------------------------------------|
 | 0.015              | 0.054         | F1, 20 Search Results, 7 Hours of Training    |
 | 0.061              | 0.129         | F0.5, 50 Search Results, 12 Hours of Training |
-|                    |               |                                               |
+| 0.094              | 0.122         | F0.3, 25 Search Results, 10 Hours of Training, higher random limits, default weight on title of 3 |
 

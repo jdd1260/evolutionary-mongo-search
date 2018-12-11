@@ -27,14 +27,14 @@
     }
   },
   "evaluation": {
-    "querySize": 25,
+    "querySize": 20,
     "relevanceMin": 1,
-    "fMeasureBeta": 0.3
+    "fMeasureBeta": 1
   },
   "training": {
     "weightChangeLimit": 3.0,
-    "randomWeightMax": 12.0,
-    "completelyRandomLimit": 8.0,
+    "randomWeightMax": 10.0,
+    "completelyRandomLimit": 5.0,
     "maxTimeInHours": 10
   },
   "testing": {
@@ -128,6 +128,6 @@
         "name": 1
       }
     },
-    "TITLE": 3
+    "TITLE": 1
   }
 }
