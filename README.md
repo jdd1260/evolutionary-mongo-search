@@ -19,7 +19,7 @@ Note: the "best" weights are determined using average F-measure across all the t
 This project uses [NodeJS](https://nodejs.org/en/), [NVM](https://github.com/creationix/nvm), and [MongoDB](https://www.mongodb.com/). You will need to have each of them installed, although the MongoDB instance could be running on a remote server.
 
 1. Fork the project and clone to your local machine. 
-2. Make sure you are on the right Node.js version: `nvm use`. 
+2. Make sure you are on the right Node.js version and install dependencies: `nvm install && npm install`. 
 3. Configure your database connection (see below)
 4. Define your text search schema and starting weights (see below).
 5. Make sure your training and evaluation configuration is correct and matches your desires (see below).
